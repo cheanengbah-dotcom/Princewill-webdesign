@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -141,6 +141,13 @@
   .skills-row { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip { background: var(--panel); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500; }
 
+  /* PROFILE PHOTO */
+  .profile-grid { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 560px) { .profile-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+  .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 26px rgba(27,31,42,0.16); }
+  .hero-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 8px 20px rgba(27,31,42,0.14); float: right; margin-left: 16px; }
+  @media (max-width: 640px) { .hero-photo { width: 72px; height: 72px; } }
+
   footer { padding: 52px 0 40px; }
   .contact-box { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 40px 32px; text-align: center; }
   .contact-box h2 { font-size: clamp(22px, 4vw, 30px); margin: 0 0 12px; }
@@ -164,6 +171,7 @@
 
 <div class="hero wrap">
   <div class="eyebrow">Création de sites web — Yaoundé</div>
+  <img src="profile.jpg" alt="Che Princewill Anengbah" class="hero-photo">
   <h1>Ton entreprise mérite mieux qu'<em>un numéro WhatsApp.</em></h1>
   <p class="lede">Je conçois des sites web simples, professionnels et bilingues (français/anglais) pour les entreprises de Yaoundé qui veulent être trouvées, crues, et contactées — même quand tu dors.</p>
 
@@ -351,16 +359,4 @@
     </div>
     <details class="faq-item" open>
       <summary>Je n'y connais rien en informatique, est-ce grave ?</summary>
-      <p>Pas du tout. Je m'occupe de tout le côté technique et je t'explique chaque étape simplement. Tu n'as qu'à me dire ce que tu veux montrer à tes clients.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Combien de temps ça prend ?</summary>
-      <p>Entre 5 et 10 jours selon la formule choisie, à partir du moment où on valide ensemble le contenu (textes, photos, logo).</p>
-    </details>
-    <details class="faq-item">
-      <summary>Et si je veux changer quelque chose après le lancement ?</summary>
-      <p>C'est normal et prévu. Les petites modifications après lancement sont incluses ; pour des changements plus importants, on en discute simplement.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Comment se passe le paiement ?</summary>
-      <p>
+      <p>Pas du tout. Je m'occupe de tout le côté techniqu
