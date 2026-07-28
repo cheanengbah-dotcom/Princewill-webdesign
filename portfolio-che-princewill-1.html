@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Che Princewill — Sites Web pour Entreprises</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B1F2A;
+    --paper: #FAF7F0;
+    --panel: #F0EAdd;
+    --rust: #B4432E;
+    --green: #2E6B52;
+    --gold: #D69A3C;
+    --line: rgba(27,31,42,0.14);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: 'Inter', sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 20; background: rgba(250,247,240,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+  .brand span { color: var(--rust); }
+  .nav-cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; }
+
+  /* HERO */
+  .hero { padding: 64px 0 40px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 15ch; }
+  .hero h1 em { font-style: normal; color: var(--rust); }
+  .hero p.lede { font-size: 18px; max-width: 46ch; color: #40424c; margin: 0 0 28px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid transparent; }
+  .btn-primary { background: var(--rust); color: #fff; }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+
+  /* PHONE MOCKUP — signature element */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 44px 0 8px; }
+  @media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
+  .phone { background: #fff; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(27,31,42,0.08); overflow: hidden; }
+  .phone-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 16px; }
+  .before .phone-label { color: #8a5a2f; background: #FBE9D3; }
+  .after .phone-label { color: #fff; background: var(--green); }
+  .wa-mock { padding: 16px; background: #EAE6DC; min-height: 220px; }
+  .wa-bubble { background: #fff; border-radius: 4px 12px 12px 12px; padding: 10px 12px; font-size: 13px; max-width: 85%; margin-bottom: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+  .wa-bubble.me { background: #DCF3D0; margin-left: auto; border-radius: 12px 4px 12px 12px; }
+  .wa-mock .typing { font-size: 12px; color: #888; font-style: italic; }
+  .site-mock { padding: 0; }
+  .site-mock .site-nav { background: var(--ink); color: #fff; padding: 10px 14px; font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }
+  .site-mock .site-hero { padding: 22px 16px; background: linear-gradient(135deg, #2E6B52, #1B1F2A); color: #fff; }
+  .site-mock .site-hero .t1 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .site-mock .site-hero .t2 { font-size: 11px; opacity: 0.85; }
+  .site-mock .site-btn { display: inline-block; margin-top: 10px; background: var(--gold); color: #1B1F2A; font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 6px; }
+  .site-mock .site-body { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .site-mock .card { background: #F5F1E8; border-radius: 8px; height: 46px; }
+
+  /* SECTIONS */
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  .section-head { max-width: 60ch; margin-bottom: 32px; }
+  .section-head .eyebrow { margin-bottom: 10px; }
+  .section-head h2 { font-size: clamp(24px, 3.6vw, 32px); margin: 0 0 10px; letter-spacing: -0.01em; }
+  .section-head p { color: #40424c; margin: 0; font-size: 16px; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel); border-radius: 14px; padding: 22px; }
+  .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--rust); }
+  .stat .label { font-size: 14px; color: #40424c; margin-top: 4px; }
+
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 780px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border: 1.5px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; }
+  .plan.featured { border-color: var(--rust); background: #fff; box-shadow: 0 14px 30px rgba(180,67,46,0.12); position: relative; }
+  .plan.featured::before { content: "Le plus choisi"; position: absolute; top: -12px; left: 22px; background: var(--rust); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+  .plan h3 { font-size: 18px; margin: 6px 0 4px; }
+  .plan .price { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 6px 0 14px; }
+  .plan .price span { font-size: 13px; font-weight: 500; color: #6b6d76; }
+  .plan ul { list-style: none; padding: 0; margin: 0 0 20px; font-size: 14px; color: #40424c; flex-grow: 1; }
+  .plan li { padding: 6px 0 6px 22px; position: relative; border-top: 1px solid var(--line); }
+  .plan li:first-child { border-top: none; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .plan .btn { justify-content: center; }
+
+  .steps { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 780px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
+  .step { counter-increment: step; }
+  .step .n { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: var(--rust); margin-bottom: 8px; }
+  .step .n::before { content: "0" counter(step); margin-right: 6px; }
+  .step h3 { font-size: 16px; margin: 0 0 6px; }
+  .step p { font-size: 14px; color: #40424c; margin: 0; }
+
+  .skills-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: var(--panel); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500; }
+
+  footer { padding: 56px 0 40px; }
+  .contact-box { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 40px 32px; text-align: center; }
+  .contact-box h2 { font-size: clamp(22px, 4vw, 30px); margin: 0 0 12px; }
+  .contact-box p { color: #cfd0d6; margin: 0 0 24px; max-width: 44ch; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .contact-box .btn-primary { background: var(--green); }
+  .contact-box .btn-ghost { border-color: #cfd0d6; }
+  .fine { text-align: center; font-size: 13px; color: #8a8c94; margin-top: 28px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Che Princewill <span>•</span> Web</div>
+    <a class="nav-cta" href="#contact">Discuter de mon projet</a>
+  </div>
+</nav>
+
+<div class="hero wrap">
+  <div class="eyebrow">Création de sites web — Yaoundé</div>
+  <h1>Ton entreprise mérite mieux qu'<em>un numéro WhatsApp.</em></h1>
+  <p class="lede">Je conçois des sites web simples, professionnels et en français/anglais pour les entreprises de Yaoundé qui veulent être trouvées, crues, et contactées — même quand tu dors.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
+    <a class="btn btn-ghost" href="#tarifs">Voir les tarifs</a>
+  </div>
+
+  <div class="compare">
+    <div class="phone before">
+      <div class="phone-label">Aujourd'hui</div>
+      <div class="wa-mock">
+        <div class="wa-bubble">Bonjour, vous faites quoi exactement ? Vous êtes situé où ?</div>
+        <div class="wa-bubble me">On est à Mvan, on vend...</div>
+        <div class="wa-bubble">Vous avez des photos ? C'est combien ?</div>
+        <div class="typing">Le client attend une réponse depuis 40 min...</div>
+      </div>
+    </div>
+    <div class="phone after">
+      <div class="phone-label">Avec un site</div>
+      <div class="site-mock">
+        <div class="site-nav"><span>TON-ENTREPRISE.CM</span><span>☰</span></div>
+        <div class="site-hero">
+          <div class="t1">Ce que tu fais, clairement.</div>
+          <div class="t2">Services, tarifs, localisation — visibles 24h/24.</div>
+          <div class="site-btn">Nous contacter</div>
+        </div>
+        <div class="site-body">
+          <div class="card"></div><div class="card"></div>
+          <div class="card"></div><div class="card"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pourquoi maintenant</div>
+      <h2>Tes clients cherchent en ligne avant de t'appeler.</h2>
+      <p>Le Cameroun se digitalise vite — et les entreprises qui n'ont pas encore de site perdent des clients face à celles qui en ont un.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="num">+35%</div><div class="label">de la population camerounaise est en ligne, bien plus à Yaoundé et Douala</div></div>
+      <div class="stat"><div class="num">75%</div><div class="label">des clients jugent la crédibilité d'une entreprise sur son site web</div></div>
+      <div class="stat"><div class="num">20%</div><div class="label">seulement des PME camerounaises ont une fiche Google bien optimisée — la concurrence est faible</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tarifs</div>
+      <h2>Des formules simples, sans surprise.</h2>
+      <p>Prix adaptés au marché camerounais. On discute de ton besoin exact avant de fixer le prix final.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Vitrine Essentielle</h3>
+        <div class="price">150 000 FCFA</div>
+        <ul>
+          <li>Une page unique</li>
+          <li>Présentation, services, contact</li>
+          <li>Version mobile optimisée</li>
+          <li>Livré sous 5 jours</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Choisir</a>
+      </div>
+      <div class="plan featured">
+        <h3>Site Professionnel</h3>
+        <div class="price">350 000 FCFA</div>
+        <ul>
+          <li>Jusqu'à 5 pages</li>
+          <li>Français + Anglais</li>
+          <li>Galerie photos, carte, WhatsApp intégré</li>
+          <li>Fiche Google Business incluse</li>
+          <li>Livré sous 10 jours</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Choisir</a>
+      </div>
+      <div class="plan">
+        <h3>Sur Mesure</h3>
+        <div class="price">À partir de 600 000 <span>FCFA</span></div>
+        <ul>
+          <li>Catalogue produits ou réservation en ligne</li>
+          <li>Espace client / paiement mobile</li>
+          <li>Accompagnement et modifications continues</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Discuter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Comment ça marche</div>
+      <h2>Du premier message au site en ligne.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">Échange</div><h3>On discute</h3><p>15 minutes pour comprendre ton activité et ce que tes clients doivent voir en premier.</p></div>
+      <div class="step"><div class="n">Maquette</div><h3>Je propose</h3><p>Une première version à valider avant de continuer — pas de mauvaise surprise.</p></div>
+      <div class="step"><div class="n">Construction</div><h3>Je construis</h3><p>Le site est monté, testé sur mobile, et ajusté selon tes retours.</p></div>
+      <div class="step"><div class="n">Lancement</div><h3>Mise en ligne</h3><p>Ton site est publié, et je t'explique comment le faire évoluer toi-même si besoin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Profil</div>
+      <h2>Formation télécom, compétences web.</h2>
+      <p>Diplômé en Télécommunications (SUP'PTIC), avec une expérience pratique en développement web et design graphique.</p>
+    </div>
+    <div class="skills-row">
+      <span class="chip">Développement web (Odoo)</span>
+      <span class="chip">Design graphique (Canva, Photoshop)</span>
+      <span class="chip">Bilingue Français / Anglais</span>
+      <span class="chip">Sites optimisés mobile</span>
+      <span class="chip">Suivi et modifications après lancement</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Prêt à avoir un vrai site pour ton entreprise ?</h2>
+      <p>Écris-moi ton secteur d'activité et ta ville — je te réponds avec une proposition claire, sans engagement.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="https://wa.me/237659775459" target="_blank" rel="noopener">WhatsApp : +237 659 775 459</a>
+        <a class="btn btn-ghost" href="mailto:cheanengbah@gmail.com">cheanengbah@gmail.com</a>
+      </div>
+    </div>
+    <p class="fine">Che Princewill Anengbah — Yaoundé, Cameroun</p>
+  </div>
+</footer>
+
+</body>
+</html>
