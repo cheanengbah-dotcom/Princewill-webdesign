@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Che Princewill — Sites Web pour Entreprises</title>
+<title>Che Princewill — Sites Web pour Entreprises à Yaoundé</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -14,6 +14,7 @@
     --rust: #B4432E;
     --green: #2E6B52;
     --gold: #D69A3C;
+    --blue: #2C5F8A;
     --line: rgba(27,31,42,0.14);
   }
   * { box-sizing: border-box; }
@@ -24,28 +25,33 @@
   }
   h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
   a { color: inherit; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
   /* NAV */
-  nav { position: sticky; top: 0; z-index: 20; background: rgba(250,247,240,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav { position: sticky; top: 0; z-index: 30; background: rgba(250,247,240,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
   .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
   .brand span { color: var(--rust); }
-  .nav-cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .nav-cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+
+  /* FLOATING WHATSAPP */
+  .float-wa { position: fixed; bottom: 20px; right: 20px; z-index: 40; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37,211,102,0.4); text-decoration: none; font-size: 26px; }
 
   /* HERO */
-  .hero { padding: 64px 0 40px; }
+  .hero { padding: 56px 0 36px; }
   .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 15ch; }
+  .hero h1 { font-size: clamp(30px, 6vw, 50px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 16ch; }
   .hero h1 em { font-style: normal; color: var(--rust); }
-  .hero p.lede { font-size: 18px; max-width: 46ch; color: #40424c; margin: 0 0 28px; }
+  .hero p.lede { font-size: 18px; max-width: 46ch; color: #40424c; margin: 0 0 22px; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .trust-pill { font-size: 12.5px; font-weight: 600; background: #fff; border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; display: flex; align-items: center; gap: 5px; }
   .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid transparent; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; }
   .btn-primary { background: var(--rust); color: #fff; }
   .btn-ghost { border-color: var(--ink); color: var(--ink); }
 
-  /* PHONE MOCKUP — signature element */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 44px 0 8px; }
+  /* PHONE MOCKUP */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px 0 8px; }
   @media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
   .phone { background: #fff; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(27,31,42,0.08); overflow: hidden; }
   .phone-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 16px; }
@@ -65,8 +71,8 @@
   .site-mock .card { background: #F5F1E8; border-radius: 8px; height: 46px; }
 
   /* SECTIONS */
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
-  .section-head { max-width: 60ch; margin-bottom: 32px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  .section-head { max-width: 60ch; margin-bottom: 30px; }
   .section-head .eyebrow { margin-bottom: 10px; }
   .section-head h2 { font-size: clamp(24px, 3.6vw, 32px); margin: 0 0 10px; letter-spacing: -0.01em; }
   .section-head p { color: #40424c; margin: 0; font-size: 16px; }
@@ -76,6 +82,22 @@
   .stat { background: var(--panel); border-radius: 14px; padding: 22px; }
   .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--rust); }
   .stat .label { font-size: 14px; color: #40424c; margin-top: 4px; }
+
+  /* PORTFOLIO / EXAMPLES */
+  .portfolio-note { font-size: 13px; color: #6b6d76; background: var(--panel); border-radius: 10px; padding: 10px 16px; margin-bottom: 24px; display: inline-block; }
+  .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 780px) { .port-grid { grid-template-columns: 1fr; } }
+  .port-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 8px 20px rgba(27,31,42,0.06); }
+  .port-mock { height: 170px; padding: 14px; color: #fff; position: relative; }
+  .port-mock .pn { font-size: 11px; font-weight: 700; opacity: 0.9; }
+  .port-mock .pt { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-top: 40px; max-width: 12ch; }
+  .port-mock .pb { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.18); font-size: 10px; font-weight: 700; padding: 5px 10px; border-radius: 6px; }
+  .port-clinic { background: linear-gradient(135deg, #2C5F8A, #16324a); }
+  .port-boutique { background: linear-gradient(135deg, #B4432E, #5e2015); }
+  .port-realestate { background: linear-gradient(135deg, #2E6B52, #142e23); }
+  .port-info { padding: 16px; }
+  .port-info h3 { font-size: 15px; margin: 0 0 4px; }
+  .port-info p { font-size: 13px; color: #40424c; margin: 0; }
 
   .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 780px) { .plans { grid-template-columns: 1fr; } }
@@ -100,10 +122,26 @@
   .step h3 { font-size: 16px; margin: 0 0 6px; }
   .step p { font-size: 14px; color: #40424c; margin: 0; }
 
+  /* WHY ME */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card { padding: 20px; border-radius: 14px; background: var(--panel); }
+  .why-card h3 { font-size: 16px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+  .why-card p { font-size: 14px; color: #40424c; margin: 0; }
+
+  /* FAQ */
+  .faq-item { border-top: 1px solid var(--line); padding: 18px 0; }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-item summary { font-weight: 600; font-size: 15.5px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 20px; color: var(--rust); font-weight: 400; }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item p { font-size: 14px; color: #40424c; margin: 10px 0 0; }
+
   .skills-row { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip { background: var(--panel); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500; }
 
-  footer { padding: 56px 0 40px; }
+  footer { padding: 52px 0 40px; }
   .contact-box { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 40px 32px; text-align: center; }
   .contact-box h2 { font-size: clamp(22px, 4vw, 30px); margin: 0 0 12px; }
   .contact-box p { color: #cfd0d6; margin: 0 0 24px; max-width: 44ch; margin-left: auto; margin-right: auto; }
@@ -122,13 +160,23 @@
   </div>
 </nav>
 
+<a class="float-wa" href="https://wa.me/237659775459" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
 <div class="hero wrap">
   <div class="eyebrow">Création de sites web — Yaoundé</div>
   <h1>Ton entreprise mérite mieux qu'<em>un numéro WhatsApp.</em></h1>
-  <p class="lede">Je conçois des sites web simples, professionnels et en français/anglais pour les entreprises de Yaoundé qui veulent être trouvées, crues, et contactées — même quand tu dors.</p>
+  <p class="lede">Je conçois des sites web simples, professionnels et bilingues (français/anglais) pour les entreprises de Yaoundé qui veulent être trouvées, crues, et contactées — même quand tu dors.</p>
+
+  <div class="trust-row">
+    <span class="trust-pill">🎓 Diplômé Télécommunications (SUP'PTIC)</span>
+    <span class="trust-pill">📱 Sites optimisés mobile</span>
+    <span class="trust-pill">🇫🇷🇬🇧 Bilingue FR/EN</span>
+    <span class="trust-pill">🔁 Révisions incluses</span>
+  </div>
+
   <div class="hero-ctas">
     <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
-    <a class="btn btn-ghost" href="#tarifs">Voir les tarifs</a>
+    <a class="btn btn-ghost" href="#exemples">Voir des exemples</a>
   </div>
 
   <div class="compare">
@@ -170,6 +218,52 @@
       <div class="stat"><div class="num">+35%</div><div class="label">de la population camerounaise est en ligne, bien plus à Yaoundé et Douala</div></div>
       <div class="stat"><div class="num">75%</div><div class="label">des clients jugent la crédibilité d'une entreprise sur son site web</div></div>
       <div class="stat"><div class="num">20%</div><div class="label">seulement des PME camerounaises ont une fiche Google bien optimisée — la concurrence est faible</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="exemples">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Exemples</div>
+      <h2>Voici le style de sites que je peux créer pour toi.</h2>
+      <p>Ce sont des concepts de démonstration montrant différents styles selon le secteur — pas des clients réels. Ton site sera conçu spécialement pour ton activité.</p>
+    </div>
+    <span class="portfolio-note">💡 Concepts de démonstration — chaque site final est personnalisé</span>
+    <div class="port-grid">
+      <div class="port-card">
+        <div class="port-mock port-clinic">
+          <div class="pn">CLINIQUE / SANTÉ</div>
+          <div class="pt">Cabinet Médical</div>
+          <div class="pb">Prise de RDV en ligne</div>
+        </div>
+        <div class="port-info">
+          <h3>Style Santé</h3>
+          <p>Sobre, rassurant, avec horaires, services et localisation bien visibles.</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-mock port-boutique">
+          <div class="pn">BOUTIQUE / COMMERCE</div>
+          <div class="pt">Boutique & Mode</div>
+          <div class="pb">Catalogue + WhatsApp</div>
+        </div>
+        <div class="port-info">
+          <h3>Style Commerce</h3>
+          <p>Visuel et coloré, pensé pour montrer des produits et pousser au contact direct.</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-mock port-realestate">
+          <div class="pn">IMMOBILIER</div>
+          <div class="pt">Agence Immobilière</div>
+          <div class="pb">Galerie de biens</div>
+        </div>
+        <div class="port-info">
+          <h3>Style Immobilier</h3>
+          <p>Élégant, orienté galerie photo, avec fiches détaillées par bien.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -222,6 +316,21 @@
 <section>
   <div class="wrap">
     <div class="section-head">
+      <div class="eyebrow">Pourquoi me choisir</div>
+      <h2>Ce que tu obtiens en travaillant avec moi.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><h3>🎯 Compris du premier coup</h3><p>Je t'explique tout simplement, sans jargon technique — tu sais toujours ce que tu payes et pourquoi.</p></div>
+      <div class="why-card"><h3>⚡ Livraison rapide</h3><p>Entre 5 et 10 jours selon la formule, avec des points d'étape réguliers.</p></div>
+      <div class="why-card"><h3>🔧 Support après lancement</h3><p>Je reste disponible pour les ajustements et je t'explique comment gérer ton site toi-même si tu veux.</p></div>
+      <div class="why-card"><h3>💬 Toujours joignable</h3><p>Contact direct par WhatsApp — pas de formulaire compliqué, pas d'attente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
       <div class="eyebrow">Comment ça marche</div>
       <h2>Du premier message au site en ligne.</h2>
     </div>
@@ -237,33 +346,21 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Profil</div>
-      <h2>Formation télécom, compétences web.</h2>
-      <p>Diplômé en Télécommunications (SUP'PTIC), avec une expérience pratique en développement web et design graphique.</p>
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2>Tout ce que tu te demandes avant de commencer.</h2>
     </div>
-    <div class="skills-row">
-      <span class="chip">Développement web (Odoo)</span>
-      <span class="chip">Design graphique (Canva, Photoshop)</span>
-      <span class="chip">Bilingue Français / Anglais</span>
-      <span class="chip">Sites optimisés mobile</span>
-      <span class="chip">Suivi et modifications après lancement</span>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <div class="contact-box">
-      <h2>Prêt à avoir un vrai site pour ton entreprise ?</h2>
-      <p>Écris-moi ton secteur d'activité et ta ville — je te réponds avec une proposition claire, sans engagement.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="https://wa.me/237659775459" target="_blank" rel="noopener">WhatsApp : +237 659 775 459</a>
-        <a class="btn btn-ghost" href="mailto:cheanengbah@gmail.com">cheanengbah@gmail.com</a>
-      </div>
-    </div>
-    <p class="fine">Che Princewill Anengbah — Yaoundé, Cameroun</p>
-  </div>
-</footer>
-
-</body>
-</html>
+    <details class="faq-item" open>
+      <summary>Je n'y connais rien en informatique, est-ce grave ?</summary>
+      <p>Pas du tout. Je m'occupe de tout le côté technique et je t'explique chaque étape simplement. Tu n'as qu'à me dire ce que tu veux montrer à tes clients.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Combien de temps ça prend ?</summary>
+      <p>Entre 5 et 10 jours selon la formule choisie, à partir du moment où on valide ensemble le contenu (textes, photos, logo).</p>
+    </details>
+    <details class="faq-item">
+      <summary>Et si je veux changer quelque chose après le lancement ?</summary>
+      <p>C'est normal et prévu. Les petites modifications après lancement sont incluses ; pour des changements plus importants, on en discute simplement.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Comment se passe le paiement ?</summary>
+      <p>
