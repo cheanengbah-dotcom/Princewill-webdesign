@@ -1,362 +1,196 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Che Princewill — Sites Web pour Entreprises à Yaoundé</title>
+<title>Che Princewill Anengbah — Web Design · Animation · Graphic Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1B1F2A;
-    --paper: #FAF7F0;
-    --panel: #F0EAdd;
-    --rust: #B4432E;
-    --green: #2E6B52;
-    --gold: #D69A3C;
-    --blue: #2C5F8A;
-    --line: rgba(27,31,42,0.14);
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: 'Inter', sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3, .display { font-family: 'Space Grotesk', sans-serif; }
-  a { color: inherit; }
-  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-
-  /* NAV */
-  nav { position: sticky; top: 0; z-index: 30; background: rgba(250,247,240,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
-  .brand { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
-  .brand span { color: var(--rust); }
-  .nav-cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
-
-  /* FLOATING WHATSAPP */
-  .float-wa { position: fixed; bottom: 20px; right: 20px; z-index: 40; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(37,211,102,0.4); text-decoration: none; font-size: 26px; }
-
-  /* HERO */
-  .hero { padding: 56px 0 36px; }
-  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(30px, 6vw, 50px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 16ch; }
-  .hero h1 em { font-style: normal; color: var(--rust); }
-  .hero p.lede { font-size: 18px; max-width: 46ch; color: #40424c; margin: 0 0 22px; }
-  .trust-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
-  .trust-pill { font-size: 12.5px; font-weight: 600; background: #fff; border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; display: flex; align-items: center; gap: 5px; }
-  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; }
-  .btn-primary { background: var(--rust); color: #fff; }
-  .btn-ghost { border-color: var(--ink); color: var(--ink); }
-
-  /* PHONE MOCKUP */
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px 0 8px; }
-  @media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
-  .phone { background: #fff; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 12px 30px rgba(27,31,42,0.08); overflow: hidden; }
-  .phone-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 16px; }
-  .before .phone-label { color: #8a5a2f; background: #FBE9D3; }
-  .after .phone-label { color: #fff; background: var(--green); }
-  .wa-mock { padding: 16px; background: #EAE6DC; min-height: 220px; }
-  .wa-bubble { background: #fff; border-radius: 4px 12px 12px 12px; padding: 10px 12px; font-size: 13px; max-width: 85%; margin-bottom: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
-  .wa-bubble.me { background: #DCF3D0; margin-left: auto; border-radius: 12px 4px 12px 12px; }
-  .wa-mock .typing { font-size: 12px; color: #888; font-style: italic; }
-  .site-mock { padding: 0; }
-  .site-mock .site-nav { background: var(--ink); color: #fff; padding: 10px 14px; font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }
-  .site-mock .site-hero { padding: 22px 16px; background: linear-gradient(135deg, #2E6B52, #1B1F2A); color: #fff; }
-  .site-mock .site-hero .t1 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .site-mock .site-hero .t2 { font-size: 11px; opacity: 0.85; }
-  .site-mock .site-btn { display: inline-block; margin-top: 10px; background: var(--gold); color: #1B1F2A; font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 6px; }
-  .site-mock .site-body { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .site-mock .card { background: #F5F1E8; border-radius: 8px; height: 46px; }
-
-  /* SECTIONS */
-  section { padding: 52px 0; border-top: 1px solid var(--line); }
-  .section-head { max-width: 60ch; margin-bottom: 30px; }
-  .section-head .eyebrow { margin-bottom: 10px; }
-  .section-head h2 { font-size: clamp(24px, 3.6vw, 32px); margin: 0 0 10px; letter-spacing: -0.01em; }
-  .section-head p { color: #40424c; margin: 0; font-size: 16px; }
-
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 640px) { .stat-grid { grid-template-columns: 1fr; } }
-  .stat { background: var(--panel); border-radius: 14px; padding: 22px; }
-  .stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--rust); }
-  .stat .label { font-size: 14px; color: #40424c; margin-top: 4px; }
-
-  /* PORTFOLIO / EXAMPLES */
-  .portfolio-note { font-size: 13px; color: #6b6d76; background: var(--panel); border-radius: 10px; padding: 10px 16px; margin-bottom: 24px; display: inline-block; }
-  .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 780px) { .port-grid { grid-template-columns: 1fr; } }
-  .port-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 8px 20px rgba(27,31,42,0.06); }
-  .port-mock { height: 170px; padding: 14px; color: #fff; position: relative; }
-  .port-mock .pn { font-size: 11px; font-weight: 700; opacity: 0.9; }
-  .port-mock .pt { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-top: 40px; max-width: 12ch; }
-  .port-mock .pb { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.18); font-size: 10px; font-weight: 700; padding: 5px 10px; border-radius: 6px; }
-  .port-clinic { background: linear-gradient(135deg, #2C5F8A, #16324a); }
-  .port-boutique { background: linear-gradient(135deg, #B4432E, #5e2015); }
-  .port-realestate { background: linear-gradient(135deg, #2E6B52, #142e23); }
-  .port-info { padding: 16px; }
-  .port-info h3 { font-size: 15px; margin: 0 0 4px; }
-  .port-info p { font-size: 13px; color: #40424c; margin: 0; }
-
-  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 780px) { .plans { grid-template-columns: 1fr; } }
-  .plan { border: 1.5px solid var(--line); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; }
-  .plan.featured { border-color: var(--rust); background: #fff; box-shadow: 0 14px 30px rgba(180,67,46,0.12); position: relative; }
-  .plan.featured::before { content: "Le plus choisi"; position: absolute; top: -12px; left: 22px; background: var(--rust); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
-  .plan h3 { font-size: 18px; margin: 6px 0 4px; }
-  .plan .price { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 6px 0 14px; }
-  .plan .price span { font-size: 13px; font-weight: 500; color: #6b6d76; }
-  .plan ul { list-style: none; padding: 0; margin: 0 0 20px; font-size: 14px; color: #40424c; flex-grow: 1; }
-  .plan li { padding: 6px 0 6px 22px; position: relative; border-top: 1px solid var(--line); }
-  .plan li:first-child { border-top: none; }
-  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-  .plan .btn { justify-content: center; }
-
-  .steps { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  @media (max-width: 780px) { .steps { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px) { .steps { grid-template-columns: 1fr; } }
-  .step { counter-increment: step; }
-  .step .n { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: var(--rust); margin-bottom: 8px; }
-  .step .n::before { content: "0" counter(step); margin-right: 6px; }
-  .step h3 { font-size: 16px; margin: 0 0 6px; }
-  .step p { font-size: 14px; color: #40424c; margin: 0; }
-
-  /* WHY ME */
-  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
-  .why-card { padding: 20px; border-radius: 14px; background: var(--panel); }
-  .why-card h3 { font-size: 16px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
-  .why-card p { font-size: 14px; color: #40424c; margin: 0; }
-
-  /* FAQ */
-  .faq-item { border-top: 1px solid var(--line); padding: 18px 0; }
-  .faq-item:last-child { border-bottom: 1px solid var(--line); }
-  .faq-item summary { font-weight: 600; font-size: 15.5px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: "+"; font-size: 20px; color: var(--rust); font-weight: 400; }
-  .faq-item[open] summary::after { content: "–"; }
-  .faq-item p { font-size: 14px; color: #40424c; margin: 10px 0 0; }
-
-  .skills-row { display: flex; flex-wrap: wrap; gap: 10px; }
-  .chip { background: var(--panel); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500; }
-
-  /* PROFILE PHOTO */
-  .profile-grid { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: center; }
-  @media (max-width: 560px) { .profile-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
-  .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 26px rgba(27,31,42,0.16); }
-  .hero-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 8px 20px rgba(27,31,42,0.14); float: right; margin-left: 16px; }
-  @media (max-width: 640px) { .hero-photo { width: 72px; height: 72px; } }
-
-  footer { padding: 52px 0 40px; }
-  .contact-box { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 40px 32px; text-align: center; }
-  .contact-box h2 { font-size: clamp(22px, 4vw, 30px); margin: 0 0 12px; }
-  .contact-box p { color: #cfd0d6; margin: 0 0 24px; max-width: 44ch; margin-left: auto; margin-right: auto; }
-  .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .contact-box .btn-primary { background: var(--green); }
-  .contact-box .btn-ghost { border-color: #cfd0d6; }
-  .fine { text-align: center; font-size: 13px; color: #8a8c94; margin-top: 28px; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
+<header>
+  <nav>
+    <div class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="15" width="3" height="6" rx="1" fill="#fff"/>
+          <rect x="8" y="10" width="3" height="11" rx="1" fill="#fff"/>
+          <path d="M13 4.8 L13 21 L21 12.5 Z" fill="#fff"/>
+        </svg>
+      </span>
+      <span>Che Princewill<span class="logo-sub">Web · Animation · Design</span></span>
+    </div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
+</header>
+
+<section class="hero">
   <div class="wrap">
-    <div class="brand">Che Princewill <span>•</span> Web</div>
-    <a class="nav-cta" href="#contact">Discuter de mon projet</a>
-  </div>
-</nav>
-
-<a class="float-wa" href="https://wa.me/237659775459" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-
-<div class="hero wrap">
-  <div class="eyebrow">Création de sites web — Yaoundé</div>
-  <img src="profile.jpg" alt="Che Princewill Anengbah" class="hero-photo">
-  <h1>Ton entreprise mérite mieux qu'<em>un numéro WhatsApp.</em></h1>
-  <p class="lede">Je conçois des sites web simples, professionnels et bilingues (français/anglais) pour les entreprises de Yaoundé qui veulent être trouvées, crues, et contactées — même quand tu dors.</p>
-
-  <div class="trust-row">
-    <span class="trust-pill">🎓 Diplômé Télécommunications (SUP'PTIC)</span>
-    <span class="trust-pill">📱 Sites optimisés mobile</span>
-    <span class="trust-pill">🇫🇷🇬🇧 Bilingue FR/EN</span>
-    <span class="trust-pill">🔁 Révisions incluses</span>
-  </div>
-
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
-    <a class="btn btn-ghost" href="#exemples">Voir des exemples</a>
-  </div>
-
-  <div class="compare">
-    <div class="phone before">
-      <div class="phone-label">Aujourd'hui</div>
-      <div class="wa-mock">
-        <div class="wa-bubble">Bonjour, vous faites quoi exactement ? Vous êtes situé où ?</div>
-        <div class="wa-bubble me">On est à Mvan, on vend...</div>
-        <div class="wa-bubble">Vous avez des photos ? C'est combien ?</div>
-        <div class="typing">Le client attend une réponse depuis 40 min...</div>
-      </div>
+    <div class="eyebrow">Web Design · Cartoon Animation · Graphic Design</div>
+    <h1>Ideas, transmitted <em>clearly.</em></h1>
+    <p class="lead">I'm Che Princewill Anengbah — trained as a radio communications engineer, now building websites, character animation, and brand visuals for businesses across Cameroon.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary">View services</a>
+      <a href="#contact" class="btn btn-ghost">Start a project</a>
     </div>
-    <div class="phone after">
-      <div class="phone-label">Avec un site</div>
-      <div class="site-mock">
-        <div class="site-nav"><span>TON-ENTREPRISE.CM</span><span>☰</span></div>
-        <div class="site-hero">
-          <div class="t1">Ce que tu fais, clairement.</div>
-          <div class="t2">Services, tarifs, localisation — visibles 24h/24.</div>
-          <div class="site-btn">Nous contacter</div>
+    <div class="signal-strip on"><span></span><span></span><span></span><span></span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>Three signals, one studio.</h2>
+    </div>
+
+    <div class="deck">
+      <div class="deck-top">
+        <div class="deck-tabs">
+          <button class="deck-tab active" data-slide="0">01 — Web Design</button>
+          <button class="deck-tab" data-slide="1">02 — Cartoon Animation</button>
+          <button class="deck-tab" data-slide="2">03 — Graphic Design</button>
         </div>
-        <div class="site-body">
-          <div class="card"></div><div class="card"></div>
-          <div class="card"></div><div class="card"></div>
+        <div class="deck-nav">
+          <div class="deck-arrow" id="prevBtn" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </div>
+          <div class="deck-arrow" id="nextBtn" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
         </div>
       </div>
+
+      <div class="slide active" data-index="0">
+        <div class="slide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div>
+          <div class="slide-num">SERVICE 01</div>
+          <h3>Web Design</h3>
+          <p>Responsive, fast-loading websites for clinics, schools, real estate agencies, and other Cameroonian SMEs that need a real online presence.</p>
+          <ul>
+            <li>Responsive layouts</li>
+            <li>Content-ready structure</li>
+            <li>Fast on mobile networks</li>
+          </ul>
+          <a class="slide-example" href="web-design.html">See a web design example
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="slide" data-index="1">
+        <div class="slide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 5.5c1 .4 1.8 1.3 2 2.4"/></svg>
+        </div>
+        <div>
+          <div class="slide-num">SERVICE 02</div>
+          <h3>Cartoon Animation</h3>
+          <p>Character design and short motion pieces that give a brand a face and a voice — explainer clips, mascots, and social content.</p>
+          <ul>
+            <li>Character design</li>
+            <li>2D motion</li>
+            <li>Social-ready formats</li>
+          </ul>
+          <a class="slide-example" href="animation.html">See an animation example
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="slide" data-index="2">
+        <div class="slide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l4.5-6 3.5 4.2 3-3.7L20 16"/><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div>
+          <div class="slide-num">SERVICE 03</div>
+          <h3>Graphic Design</h3>
+          <p>Logos, brand identities, and marketing materials that keep a business looking consistent everywhere it shows up.</p>
+          <ul>
+            <li>Logo &amp; identity</li>
+            <li>Flyers &amp; social templates</li>
+            <li>Print-ready files</li>
+          </ul>
+          <a class="slide-example" href="graphic-design.html">See a graphic design example
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About</div>
+      <h2>From radio signals to visual ones.</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I trained as a radio communications engineer at SUP'PTIC in Yaoundé, and worked on fiber optic installation and network security during a traineeship at CAMTEL Bafoussam. That background in precision and infrastructure now shapes how I approach design work.</p>
+        <p>Today I build websites, animate characters, and design brand visuals for clients who need to be seen — and understood — online.</p>
+      </div>
+      <div class="credentials">
+        <div>
+          <div class="credential-title">SUP'PTIC — Radio Communication</div>
+          <div class="credential-sub">2021 – 2024</div>
+        </div>
+        <div>
+          <div class="credential-title">CAMTEL Bafoussam — Traineeship</div>
+          <div class="credential-sub">Fiber optic fusion · network security · 2022 – 2023</div>
+        </div>
+        <div>
+          <div class="credential-title">Available for freelance</div>
+          <div class="credential-sub">Web design · animation · graphic design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div>
+    <div class="eyebrow">Contact</div>
+    <h2>Ready to get online?</h2>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:cheanengbah@gmail.com">cheanengbah@gmail.com <span class="tag">EMAIL</span></a>
+    <a href="https://wa.me/237659775459">+237 659 775 459 <span class="tag">WHATSAPP / CALL</span></a>
+    <a href="tel:+237671812905">+237 671 812 905 <span class="tag">CALL</span></a>
   </div>
 </div>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Pourquoi maintenant</div>
-      <h2>Tes clients cherchent en ligne avant de t'appeler.</h2>
-      <p>Le Cameroun se digitalise vite — et les entreprises qui n'ont pas encore de site perdent des clients face à celles qui en ont un.</p>
-    </div>
-    <div class="stat-grid">
-      <div class="stat"><div class="num">+35%</div><div class="label">de la population camerounaise est en ligne, bien plus à Yaoundé et Douala</div></div>
-      <div class="stat"><div class="num">75%</div><div class="label">des clients jugent la crédibilité d'une entreprise sur son site web</div></div>
-      <div class="stat"><div class="num">20%</div><div class="label">seulement des PME camerounaises ont une fiche Google bien optimisée — la concurrence est faible</div></div>
-    </div>
-  </div>
-</section>
+<footer>© 2026 Che Princewill Anengbah</footer>
 
-<section id="exemples">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Exemples</div>
-      <h2>Voici le style de sites que je peux créer pour toi.</h2>
-      <p>Ce sont des concepts de démonstration montrant différents styles selon le secteur — pas des clients réels. Ton site sera conçu spécialement pour ton activité.</p>
-    </div>
-    <span class="portfolio-note">💡 Concepts de démonstration — chaque site final est personnalisé</span>
-    <div class="port-grid">
-      <div class="port-card">
-        <div class="port-mock port-clinic">
-          <div class="pn">CLINIQUE / SANTÉ</div>
-          <div class="pt">Cabinet Médical</div>
-          <div class="pb">Prise de RDV en ligne</div>
-        </div>
-        <div class="port-info">
-          <h3>Style Santé</h3>
-          <p>Sobre, rassurant, avec horaires, services et localisation bien visibles.</p>
-        </div>
-      </div>
-      <div class="port-card">
-        <div class="port-mock port-boutique">
-          <div class="pn">BOUTIQUE / COMMERCE</div>
-          <div class="pt">Boutique & Mode</div>
-          <div class="pb">Catalogue + WhatsApp</div>
-        </div>
-        <div class="port-info">
-          <h3>Style Commerce</h3>
-          <p>Visuel et coloré, pensé pour montrer des produits et pousser au contact direct.</p>
-        </div>
-      </div>
-      <div class="port-card">
-        <div class="port-mock port-realestate">
-          <div class="pn">IMMOBILIER</div>
-          <div class="pt">Agence Immobilière</div>
-          <div class="pb">Galerie de biens</div>
-        </div>
-        <div class="port-info">
-          <h3>Style Immobilier</h3>
-          <p>Élégant, orienté galerie photo, avec fiches détaillées par bien.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const tabs = document.querySelectorAll('.deck-tab');
+  let current = 0;
 
-<section id="tarifs">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Tarifs</div>
-      <h2>Des formules simples, sans surprise.</h2>
-      <p>Prix adaptés au marché camerounais. On discute de ton besoin exact avant de fixer le prix final.</p>
-    </div>
-    <div class="plans">
-      <div class="plan">
-        <h3>Vitrine Essentielle</h3>
-        <div class="price">150 000 FCFA</div>
-        <ul>
-          <li>Une page unique</li>
-          <li>Présentation, services, contact</li>
-          <li>Version mobile optimisée</li>
-          <li>Livré sous 5 jours</li>
-        </ul>
-        <a class="btn btn-ghost" href="#contact">Choisir</a>
-      </div>
-      <div class="plan featured">
-        <h3>Site Professionnel</h3>
-        <div class="price">350 000 FCFA</div>
-        <ul>
-          <li>Jusqu'à 5 pages</li>
-          <li>Français + Anglais</li>
-          <li>Galerie photos, carte, WhatsApp intégré</li>
-          <li>Fiche Google Business incluse</li>
-          <li>Livré sous 10 jours</li>
-        </ul>
-        <a class="btn btn-primary" href="#contact">Choisir</a>
-      </div>
-      <div class="plan">
-        <h3>Sur Mesure</h3>
-        <div class="price">À partir de 600 000 <span>FCFA</span></div>
-        <ul>
-          <li>Catalogue produits ou réservation en ligne</li>
-          <li>Espace client / paiement mobile</li>
-          <li>Accompagnement et modifications continues</li>
-        </ul>
-        <a class="btn btn-ghost" href="#contact">Discuter</a>
-      </div>
-    </div>
-  </div>
-</section>
+  function goTo(i){
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    tabs.forEach((t, idx) => t.classList.toggle('active', idx === current));
+  }
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Pourquoi me choisir</div>
-      <h2>Ce que tu obtiens en travaillant avec moi.</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card"><h3>🎯 Compris du premier coup</h3><p>Je t'explique tout simplement, sans jargon technique — tu sais toujours ce que tu payes et pourquoi.</p></div>
-      <div class="why-card"><h3>⚡ Livraison rapide</h3><p>Entre 5 et 10 jours selon la formule, avec des points d'étape réguliers.</p></div>
-      <div class="why-card"><h3>🔧 Support après lancement</h3><p>Je reste disponible pour les ajustements et je t'explique comment gérer ton site toi-même si tu veux.</p></div>
-      <div class="why-card"><h3>💬 Toujours joignable</h3><p>Contact direct par WhatsApp — pas de formulaire compliqué, pas d'attente.</p></div>
-    </div>
-  </div>
-</section>
+  tabs.forEach((tab, idx) => tab.addEventListener('click', () => goTo(idx)));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Comment ça marche</div>
-      <h2>Du premier message au site en ligne.</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="n">Échange</div><h3>On discute</h3><p>15 minutes pour comprendre ton activité et ce que tes clients doivent voir en premier.</p></div>
-      <div class="step"><div class="n">Maquette</div><h3>Je propose</h3><p>Une première version à valider avant de continuer — pas de mauvaise surprise.</p></div>
-      <div class="step"><div class="n">Construction</div><h3>Je construis</h3><p>Le site est monté, testé sur mobile, et ajusté selon tes retours.</p></div>
-      <div class="step"><div class="n">Lancement</div><h3>Mise en ligne</h3><p>Ton site est publié, et je t'explique comment le faire évoluer toi-même si besoin.</p></div>
-    </div>
-  </div>
-</section>
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight') goTo(current + 1);
+    if(e.key === 'ArrowLeft') goTo(current - 1);
+  });
+</script>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Questions fréquentes</div>
-      <h2>Tout ce que tu te demandes avant de commencer.</h2>
-    </div>
-    <details class="faq-item" open>
-      <summary>Je n'y connais rien en informatique, est-ce grave ?</summary>
-      <p>Pas du tout. Je m'occupe de tout le côté techniqu
+</body>
+</html>
